@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.Scanner;
 
 public class Car extends Vehicle  {
-     private FuelType fuelType ;
+    private FuelType fuelType ;
     public Car(String brand, String model, String date, FuelType fuelType) {
         super(brand, model, date);
         this.fuelType = fuelType;
@@ -47,6 +47,6 @@ public class Car extends Vehicle  {
 
     @Override
     public String toString() {
-        return "Brand: '"+this.brand + "' , Model: "+this.model+"', Date: '"+ this.date+ "Fuel Type: '"+ this.fuelType+"' |||\n";
+        return "Brand: '"+super.getBrand() + "' , Model: "+super.getModel()+"', Date: '"+ super.getDate()+ "Fuel Type: '"+ this.fuelType+"' |||\n";
     }
 }

@@ -18,7 +18,7 @@ import static com.company.SerializeToXML.deserializeFromXML;
 import static com.company.SerializeToXML.serializeToXML;
 import static com.company.Vehicle.*;
 import static org.testng.Assert.assertEquals;
-
+//@Test
 public class SuperTest {
     private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
     @Test
@@ -58,7 +58,7 @@ public class SuperTest {
          int year = period.getYears();
         assertEquals(year , 22);
     }
-   /* @Test
+    @Test(enabled =false)
     public void tets2 () throws IOException {
         Vehicle car = new Vehicle("BMW", "Mini", "11/09/1997");
         Vehicle car3 = new Vehicle("BMW", "Mini", "11/09/2020");
@@ -73,7 +73,11 @@ public class SuperTest {
         ArrayList<Vehicle> cars3 ;
        cars3= deserializeFromXML();
         assertEquals(cars,cars3);
-    }*/
+    }
+
+    public void notAtest(){
+
+    }
 }
 /*import static org.testng.Assert.assertEquals;
 

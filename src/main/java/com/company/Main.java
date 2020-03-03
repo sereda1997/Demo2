@@ -15,6 +15,7 @@ public class Main {
     public static final String ANSI_PURPLE = "\u001B[35m";
     public static final String ANSI_RED = "\u001B[31m";
     public static final String ANSI_WHITE = "\u001B[37m";
+  //  String[] colours = new String[5];
 
     public static void main(String[] args) throws IOException {
         Vehicle car = new Vehicle("BMW", "Mini", "11/09/2000");
@@ -95,8 +96,9 @@ public class Main {
                     param = scan.nextInt();
                     break;
                 case 8:
+                    System.out.print("Deserialized Cars: \n");
                     System.out.println(deserializeFromXML());
-                    System.out.println("Deserialized Cars: \n");
+
 
                     System.out.println("Please choose an action by typing 0-6");
                     param = scan.nextInt();

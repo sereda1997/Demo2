@@ -9,9 +9,9 @@ import java.util.Comparator;
 import java.util.Scanner;
 
 public class Vehicle implements Serializable {
-    String brand;
-    String model;
-    String date;
+    private String brand;
+    private String model;
+    private String date;
     static LocalDate dateNow = LocalDate.now();
 
     public Vehicle() {
@@ -33,7 +33,15 @@ public class Vehicle implements Serializable {
         System.out.println("Enter Model");
         setModel(input.nextLine());
         System.out.println("Enter Date like\"d/MM/yyyy\"");
-        setDate(input.nextLine());
+        try {
+            String date ;
+            date = input.next();
+            LocalDate x = LocalDate.parse(date, formatter);
+            setDate(date);
+        } catch (Exception e) {
+            System.out.println("Wrong date format was inputed");
+        }
+
 
 
     }
