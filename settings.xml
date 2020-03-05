@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="11.0.3" class="java.beans.XMLDecoder">
+ <object class="java.util.ArrayList">
+  <void method="add">
+   <object class="com.company.Vehicle">
+    <void property="brand">
+     <string>BMW</string>
+    </void>
+    <void property="date">
+     <string>11/09/2000</string>
+    </void>
+    <void property="model">
+     <string>Mini</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="com.company.Car">
+    <void property="brand">
+     <string>Audi</string>
+    </void>
+    <void property="date">
+     <string>11/09/2015</string>
+    </void>
+    <void property="fuelType">
+     <object class="java.lang.Enum" id="FuelType0" method="valueOf">
+      <class>com.company.FuelType</class>
+      <string>GAS</string>
+     </object>
+    </void>
+    <void property="model">
+     <string>Aini</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="com.company.Car">
+    <void property="brand">
+     <string>Ferrari</string>
+    </void>
+    <void property="date">
+     <string>11/09/1997</string>
+    </void>
+    <void property="fuelType">
+     <object idref="FuelType0"/>
+    </void>
+    <void property="model">
+     <string>Bini</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="com.company.Car">
+    <void property="brand">
+     <string>BMW</string>
+    </void>
+    <void property="date">
+     <string>11/09/1997</string>
+    </void>
+    <void property="fuelType">
+     <object idref="FuelType0"/>
+    </void>
+    <void property="model">
+     <string>Cini</string>
+    </void>
+   </object>
+  </void>
+ </object>
+</java>
