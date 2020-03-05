@@ -10,12 +10,11 @@ import static com.company.SerializeToXML.serializeToXML;
 
 public class Main {
     private static Scanner scan = new Scanner(System.in);
-    public static final String ANSI_YELLOW = "\u001B[33m";
-    public static final String ANSI_BLUE = "\u001B[34m";
-    public static final String ANSI_PURPLE = "\u001B[35m";
-    public static final String ANSI_RED = "\u001B[31m";
-    public static final String ANSI_WHITE = "\u001B[37m";
-  //  String[] colours = new String[5];
+    static final String ANSI_YELLOW = "\u001B[33m";
+    static final String ANSI_BLUE = "\u001B[34m";
+    static final String ANSI_PURPLE = "\u001B[35m";
+    static final String ANSI_RED = "\u001B[31m";
+    static final String ANSI_WHITE = "\u001B[37m";
 
     public static void main(String[] args) throws IOException {
         Vehicle car = new Vehicle("BMW", "Mini", "11/09/2000");
@@ -37,7 +36,6 @@ public class Main {
                     Vehicle v = new Vehicle();
                     v.inPut();
                     cars.add(v);
-                    //cars.add(new Vehicle());
                     System.out.println("New vehicle was added");
                     param = scan.nextInt();
                     break;
@@ -51,13 +49,6 @@ public class Main {
                     param = scan.nextInt();
                     break;
                 case 3:
-
-                 /*   for (Vehicle x:cars
-                         ) {
-                        System.out.println(x);
-                    }*/
-                    //  System.out.println(cars.toString());
-                   // Vehicle.output(cars);
                     System.out.println(cars);
                     System.out.println("Please choose an action by typing 0-6");
                     param = scan.nextInt();
@@ -72,24 +63,17 @@ public class Main {
 
                 case 5:
                     Collections.sort(cars, Vehicle.ModelComparator);
-                    for (Vehicle c :
-                            cars) {
-                        System.out.println(c);
-                    }
+                    System.out.println("Vehicles sorted by Model: \n"+cars);
                     System.out.println("Please choose an action by typing 0-6");
                     param = scan.nextInt();
                     break;
                 case 6:
                     Collections.sort(cars, Vehicle.BrandComparator);
-                    for (Vehicle c :
-                            cars) {
-                        System.out.println(c);
-                    }
+                    System.out.println("Vehicles sorted by Brand: \n"+cars);
                     System.out.println("Please choose an action by typing 0-6");
                     param = scan.nextInt();
                     break;
                 case 7:
-
                     serializeToXML(cars);
                     System.out.println("Cars is serialized");
                     System.out.println("Please choose an action by typing 0-6");
@@ -110,8 +94,9 @@ public class Main {
                     param = scan.nextInt();
                     break;
 
-                default: if(param>9)
-                    throw new IllegalStateException("Unexpected value: " + param);
+                default:
+                    if (param > 9)
+                        throw new IllegalStateException("Unexpected value: " + param);
 
             }
         }

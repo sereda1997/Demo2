@@ -30,9 +30,7 @@ import java.util.ArrayList;
         decoder.close();
         fis.close();
         System.out.println("Succesfully deserialized");
-
         return  decodedSettings;
-
     }
 
 }

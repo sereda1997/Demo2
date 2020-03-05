@@ -1,39 +1,37 @@
 package com.company;
 
-import java.io.Serializable;
-import java.time.LocalDate;
-import java.util.Date;
 import java.util.Scanner;
 
-public class Car extends Vehicle  {
-    private FuelType fuelType ;
+public class Car extends Vehicle {
+
+    private FuelType fuelType;
+
     public Car(String brand, String model, String date, FuelType fuelType) {
         super(brand, model, date);
         this.fuelType = fuelType;
     }
-     public Car(){
 
-     }
+    public Car() {
+    }
 
     @Override
     public void inPut() {
-        Scanner input =new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
         super.inPut();
-        int fuelChoose;
         System.out.println("Choose your car fuel type: ELECTRIC - 1,DIESEL - 2 ,GAS - 3");
-
-        switch (input.nextInt()){
-            case 1: setFuelType(FuelType.ELECTRIC);
-            break;
-            case 2: setFuelType(FuelType.DIESEL);
-            break;
-            case 3: setFuelType(FuelType.GAS);
+        switch (input.nextInt()) {
+            case 1:
+                setFuelType(FuelType.ELECTRIC);
+                break;
+            case 2:
+                setFuelType(FuelType.DIESEL);
+                break;
+            case 3:
+                setFuelType(FuelType.GAS);
 
         }
 
     }
-
-
 
     public FuelType getFuelType() {
         return fuelType;
@@ -41,12 +39,10 @@ public class Car extends Vehicle  {
 
     public void setFuelType(FuelType fuelType) {
         this.fuelType = fuelType;
-        /*Date date = new Date();
-        int currentYear = date.getYear();*/
     }
 
     @Override
     public String toString() {
-        return "Brand: '"+super.getBrand() + "' , Model: "+super.getModel()+"', Date: '"+ super.getDate()+ "Fuel Type: '"+ this.fuelType+"' |||\n";
+        return "Brand: '" + super.getBrand() + "' , Model: " + super.getModel() + "', Date: '" + super.getDate() + "Fuel Type: '" + this.fuelType + "' |||\n";
     }
 }

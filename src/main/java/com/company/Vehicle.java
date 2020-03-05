@@ -12,7 +12,7 @@ public class Vehicle implements Serializable {
     private String brand;
     private String model;
     private String date;
-    static LocalDate dateNow = LocalDate.now();
+    private static LocalDate dateNow = LocalDate.now();
 
     public Vehicle() {
 
@@ -33,15 +33,15 @@ public class Vehicle implements Serializable {
         System.out.println("Enter Model");
         setModel(input.nextLine());
         System.out.println("Enter Date like\"d/MM/yyyy\"");
+        String date;
         try {
-            String date ;
             date = input.next();
             LocalDate x = LocalDate.parse(date, formatter);
             setDate(date);
         } catch (Exception e) {
             System.out.println("Wrong date format was inputed");
+            inPut();
         }
-
 
 
     }
@@ -79,7 +79,7 @@ public class Vehicle implements Serializable {
 
     @Override
     public String toString() {
-        return "Brand: '"+this.brand + "' , Model: '"+this.model+"', Date: "+this.date+" |||\n";
+        return "Brand: '" + this.brand + "' , Model: '" + this.model + "', Date: " + this.date + " |||\n";
     }
 
     public static Comparator<Vehicle> BrandComparator = new Comparator<Vehicle>() {
@@ -95,7 +95,6 @@ public class Vehicle implements Serializable {
     public static Comparator<Vehicle> ModelComparator = new Comparator<Vehicle>() {
 
         public int compare(Vehicle s1, Vehicle s2) {
-
             return s1.model.compareTo(s2.model);
 
             /*For descending order*/
@@ -111,15 +110,6 @@ public class Vehicle implements Serializable {
                 oldCars1.add(x);
             }
         }
-    return oldCars1;
+        return oldCars1;
     }
-    public static void output(ArrayList<Vehicle> x){
-        for (Vehicle y : x
-        ) {
-            System.out.println(y);
-        }
-
-    }
-
-
 }
